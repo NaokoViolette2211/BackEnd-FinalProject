@@ -1,0 +1,113 @@
+.editRecipePage {
+  height: 100vh;
+  background-color: aliceblue;
+}
+.editRecipePage--main {
+  background-color: aliceblue;
+  height: 100%;
+}
+.editRecipePage--main--container {
+  height: 100%;
+}
+@media (max-width: 575px) {
+  .editRecipePage--main--container {
+    padding: 0 1.8rem;
+  }
+}
+.editRecipePage--main--container--nav {
+  padding: 0.8rem 0;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.editRecipePage--main--container--nav .title {
+  margin: 0 auto 0 0;
+  font-size: 2rem;
+}
+@media (max-width: 330px) {
+  .editRecipePage--main--container--nav .title {
+    font-size: 1.2rem;
+  }
+}
+.editRecipePage--main--container--nav .btn {
+  margin-left: 0.8rem;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+}
+@media (max-width: 410px) {
+  .editRecipePage--main--container--nav .btn {
+    font-size: 1.2rem;
+  }
+}
+.editRecipePage--main--container--nav .btn:first-of-type {
+  margin-left: 0 auto;
+}
+.editRecipePage--main--container--nav .cancel-btn {
+  background-color: #cdc5c5;
+}
+.editRecipePage--main--container--nav .cancel-btn:hover {
+  background-color: #aaa;
+}
+.editRecipePage--main--container--form {
+  box-sizing: border-box;
+  display: flex;
+  font-size: 1.6rem;
+  gap: 1rem;
+}
+@media (max-width: 992px) {
+  .editRecipePage--main--container--form {
+    flex-direction: column;
+  }
+}
+.editRecipePage--main--container--form .left-container .required {
+  color: red;
+  font-size: 1.2rem;
+}
+.editRecipePage--main--container--form .left-container #title {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.editRecipePage--main--container--form .left-container #notes {
+  padding: 0.8rem;
+  white-space: pre-wrap;
+}
+@media (max-width: 992px) {
+  .editRecipePage--main--container--form .left-container #notes {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .editRecipePage--main--container--form .left-container #notes {
+    height: 10rem;
+  }
+}
+.editRecipePage--main--container--form .middle-container {
+  flex: 1;
+}
+.editRecipePage--main--container--form .middle-container #ingredients {
+  width: 100%;
+  padding: 0.8rem;
+  white-space: pre-wrap;
+}
+@media (max-width: 575px) {
+  .editRecipePage--main--container--form .middle-container #ingredients {
+    height: 30rem;
+  }
+}
+.editRecipePage--main--container--form .right-container {
+  flex: 1;
+}
+.editRecipePage--main--container--form .right-container #directions {
+  width: 100%;
+  padding: 0.8rem;
+  white-space: pre-wrap;
+}
+@media (max-width: 575px) {
+  .editRecipePage--main--container--form .right-container #directions {
+    height: 30rem;
+  }
+}
+/*# sourceMappingURL=EditRecipePage .css.map */

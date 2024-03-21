@@ -1,0 +1,115 @@
+$sm: 410px;
+$md: 767.98px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin mq($bp){
+  @media (max-width: ($bp)) { 
+      @content;
+  }
+}
+
+.navbar {
+  width: 100%;
+  background-color: #013A20;
+  margin: 0;
+
+  &--container{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+
+    &--title {
+      margin: 0;
+      font-size: 3rem;
+      padding: 1rem;
+      margin-right: auto;
+      cursor: pointer;
+      color: #f9eeee;
+      @include mq($md){
+        font-size: 2rem;
+      }
+    }
+  
+    &--ul {
+      margin: 0 3rem 0 0;
+      @include mq($md){
+        margin-right: 1rem;
+      }
+      &--li{
+        width: 100%;
+        list-style: none;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        background-color: #E9EDCE;
+        border-radius: 0.8rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #BACC81;
+          color: #fff;
+        }
+        @include mq($md){
+          font-size: 1.6rem;
+          padding: 1rem;
+        }
+        @include mq($sm){
+          display: none;
+        }
+      }
+
+    }
+  
+    &--logout-btn{
+      font-size: 2rem;
+      padding: 1rem;
+      margin-right: 1rem;
+      border-radius: 0.8rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #F65757;
+        color: #fff;
+      }
+
+      @include mq($md){
+        margin-right: 0;
+        font-size: 1.6rem;
+      }
+      @include mq($sm){
+        display: none;
+      }
+      
+    }
+
+    #dropdown-basic{
+      background-color: #E9EDCE;
+      color: black;
+      border: none;
+      display: none;
+        .bi-list{
+          font-size: 2rem;
+        }
+      &:hover{
+        background-color: #BACC81;
+      }
+      @include mq($sm){
+        display: block;
+        width: 5rem;
+
+      }
+      &::after{
+        display: none;
+      }
+    }
+    .create-btn, .logout-btn{
+      font-size: 1.6rem;
+      &:hover{
+        background-color: #BACC81;
+      }
+    }
+  }
+}
+

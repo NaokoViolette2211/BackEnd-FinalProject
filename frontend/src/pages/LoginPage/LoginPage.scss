@@ -1,0 +1,136 @@
+$sm: 410px;
+$md: 767.98px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin mq($bp){
+  @media (max-width: ($bp)) { 
+      @content;
+  }
+}
+
+.loginPage {
+  width: 100%;
+  height: 100vh;
+  background-color: Whitesmoke;
+  
+  &--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    @include mq($md){
+      padding: 0;
+      background-color: #013A20;
+    }
+
+    &--img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      background-color: #CDCFC0;
+      width: 100%;
+      height: 80%;
+      padding: 3rem;
+      @include mq($md){
+        display: none;
+      }
+
+      .logo{
+        width: 100%;
+      }
+    }
+    
+    &--form--outer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      background-color: #013A20;
+      width: 100%;
+      height: 80%;
+      padding: 3rem;
+
+      &--inner {
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.6rem;
+      
+
+        @include mq($md){
+          position: relative;
+          max-width: 40rem;
+        }
+      
+        &--title{
+          margin: 0.6rem 0;
+          padding: 4px 4px 16px;
+          color: black;
+          font-size: 3rem;
+          text-align: center;
+
+          @include mq($md){
+            &::before{
+              content: url(../../../public/assets/menu-icon.png);
+              display: inline-block;
+              vertical-align: middle;
+              transform: scale(0.4);
+              position: absolute;
+              top: -5rem;
+              left: -5rem;
+              margin-bottom: 4rem;
+              @include mq($sm){
+                transform: scale(0.3);
+                top: -6rem;
+                left: -6rem;
+              }
+            }
+          }
+          @include mq($sm){
+            font-size: 2.5rem;
+            padding-top: 2rem;
+          }
+        }
+
+        label {
+          font-size: 2rem;
+        }
+
+        input{
+          font-size: 1.6rem;
+          padding: 0.4rem;
+          margin-bottom: 0.8rem;
+          margin-bottom: 1rem;
+          border-radius: 0.4rem;
+        }
+
+        button{
+          font-size: 2rem;
+          margin: 2rem 0;
+          padding: 8px;
+          border-radius: 0.4rem;
+          cursor: pointer;
+
+          &:hover{
+            background-color: #CDCFC0;
+          }
+        }
+
+        p{
+          text-align: center;
+          font-size: 1.6rem;
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

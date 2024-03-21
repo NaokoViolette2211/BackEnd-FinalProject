@@ -1,0 +1,120 @@
+$xxs: 330px;
+$xs: 410px;
+$sm: 575px;
+$md: 767.98px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin mq($bp){
+  @media (max-width: ($bp)) { 
+      @content;
+  }
+}
+.editRecipePage{
+  height: 100vh;
+  background-color: aliceblue;
+
+  &--main{
+    background-color: aliceblue;
+    height: 100%;
+
+    &--container {
+      height: 100%;
+      @include mq($sm){
+        padding: 0 1.8rem;
+      }
+
+      &--nav {
+        padding: 0.8rem 0;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .title{
+          margin: 0 auto 0 0;
+          font-size: 2rem;
+          @include mq($xxs){
+            font-size: 1.2rem;
+          }
+        }
+        .btn{
+          margin-left: 0.8rem;
+          font-size: 1.6rem;
+          padding: 0.8rem;
+          @include mq($xs){
+            font-size: 1.2rem;
+          }
+        }
+        .btn:first-of-type{
+          margin-left: 0 auto;
+        }
+        .cancel-btn{
+          background-color: #cdc5c5;
+          &:hover {
+            background-color: #aaa;
+          }
+        }
+      }
+      &--form{
+        box-sizing: border-box;
+        display: flex;
+        font-size: 1.6rem;
+        gap: 1rem;
+        @include mq($lg){
+          flex-direction: column;
+        }
+        
+        .left-container {
+          .required{
+            color: red;
+            font-size: 1.2rem;
+          }
+          #title{
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+          }
+
+          #notes{
+            padding: 0.8rem;
+            white-space: pre-wrap;
+            @include mq($lg){
+              width: 100%;
+            }
+            @include mq($sm){
+              height: 10rem;
+            }
+          }
+        }
+
+        .middle-container{
+          flex: 1;
+
+          #ingredients{
+            width: 100%;
+            padding: 0.8rem;
+            white-space: pre-wrap;
+            @include mq($sm){
+              height: 30rem;
+            }
+          }
+        }
+
+        .right-container{
+          flex: 1;
+
+          #directions{
+            width: 100%;
+            padding: 0.8rem;
+            white-space: pre-wrap;
+            @include mq($sm){
+              height: 30rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

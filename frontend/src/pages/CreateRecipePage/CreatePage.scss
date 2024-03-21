@@ -1,0 +1,165 @@
+$xxs: 330px;
+$xs: 410px;
+$sm: 575px;
+$md: 767.98px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin mq($bp){
+  @media (max-width: ($bp)) { 
+      @content;
+  }
+}
+.createPage{
+  height: 100vh;
+  overflow: hidden;
+  @include mq($lg){
+    overflow: auto;
+  }
+
+  &--main{
+    background-color: whitesmoke;
+
+    &--container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      @include mq($sm){
+        padding: 0 1.8rem;
+      }
+
+      &--nav {
+        height: 10%;
+        padding: 0.8rem 0;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+
+        .title{
+          margin: 0 auto 0 0;
+          font-size: 2rem;
+          @include mq($xxs){
+            font-size: 1.2rem;
+          }
+        }
+
+        .btn{
+          margin-left: 0.8rem;
+          font-size: 1.6rem;
+          width: 10rem;
+          @include mq($xs){
+            font-size: 1.2rem;
+            width: 6rem;
+          }
+        }
+
+        .btn:first-of-type{
+          margin-left: 0 auto;
+        }
+        .cancel-btn{
+          background-color: #cdc5c5;
+          border: none;
+          &:hover {
+            background-color: #aaa;
+          }
+        }
+      }
+      &--form{
+        box-sizing: border-box;
+        display: flex;
+        font-size: 1.6rem;
+        gap: 1rem;
+        height: 80%;
+        @include mq($lg){
+          flex-direction: column;
+        }
+        
+        .left-container {
+          flex: 1;
+          height: 100vh;
+          .required{
+            color: red;
+            font-size: 1.2rem;
+          }
+
+          #title{
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            font-family: "Playpen Sans", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+          }
+
+          #notes{
+            width: 100%;
+            height: 40%;
+            padding: 0.8rem;
+            font-family: "Playpen Sans", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+            white-space: pre-wrap;
+            @include mq($lg){
+              width: 100%;
+            }
+            @include mq($sm){
+              height: 10rem;
+            }
+          }
+        }
+
+        .middle-container{
+          height: 100vh;
+          flex: 1;
+
+          #ingredients{
+            width: 100%;
+            height: 65%;
+            box-sizing: border-box;
+            padding: 0.8rem;
+            font-family: "Playpen Sans", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+            // overflow: scroll;
+            white-space: pre-wrap;
+            @include mq($lg){
+              height: 50rem;
+            }
+            @include mq($sm){
+              height: 30rem;
+            }
+          }
+        }
+
+        .right-container{
+          flex: 1;
+
+          #directions{
+            width: 100%;
+            height: 65%;
+            padding: 0.8rem;
+            font-family: "Playpen Sans", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+            white-space: pre-wrap;
+            @include mq($lg){
+              height: 50rem;
+            }
+            @include mq($sm){
+              height: 30rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

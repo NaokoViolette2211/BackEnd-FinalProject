@@ -1,0 +1,261 @@
+.previewPage {
+  height: 100vh;
+  background-color: whitesmoke;
+}
+.previewPage--main {
+  background-color: whitesmoke;
+}
+.previewPage--main--container {
+  height: 100%;
+  padding-top: 1rem;
+}
+.previewPage--main--container--top {
+  display: flex;
+  gap: 4rem;
+}
+.previewPage--main--container--top .img-container {
+  width: 20rem;
+  height: 20rem;
+  flex: 1;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--top .img-container {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .img-container {
+    display: none;
+  }
+}
+.previewPage--main--container--top .img-container img {
+  width: 100%;
+  height: 100%;
+}
+.previewPage--main--container--top .title-notes-container {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  overflow-y: hidden;
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container {
+  display: flex;
+  justify-content: right;
+  flex: 1;
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container {
+    position: relative;
+  }
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .title {
+  margin-right: auto;
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container .title {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container .title {
+    font-size: 2rem;
+    margin-left: 10rem;
+    padding-top: 1rem;
+  }
+  .previewPage--main--container--top .title-notes-container .title-btns-container .title::before {
+    content: url("../../assets/menu-icon.png");
+    display: inline-block;
+    vertical-align: middle;
+    transform: scale(0.4);
+    position: absolute;
+    top: -6rem;
+    left: -6rem;
+  }
+}
+@media (max-width: 410px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container .title {
+    font-size: 1.6rem;
+  }
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .btn {
+  margin-left: 2rem;
+  width: 10rem;
+  height: 4rem;
+  font-size: 1.6rem;
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container .btn-success {
+    display: none;
+  }
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .btn-success:hover {
+  background-color: #0D3A20;
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container .btn-danger {
+    display: none;
+  }
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .btn-danger:hover {
+  background-color: red;
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .btn-cancel {
+  background-color: #d4caca;
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container .btn-cancel {
+    display: none;
+  }
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .btn-cancel:hover {
+  background-color: rgb(103, 92, 92);
+  color: #fff;
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container #dropdown-basic {
+  background-color: #E9EDCE;
+  color: black;
+  border: none;
+  display: none;
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container #dropdown-basic .bi-list {
+  font-size: 2rem;
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container #dropdown-basic:hover {
+  background-color: #BACC81;
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .title-notes-container .title-btns-container #dropdown-basic {
+    display: block;
+    width: 5rem;
+  }
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container #dropdown-basic::after {
+  display: none;
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .edit-btn, .previewPage--main--container--top .title-notes-container .title-btns-container .delete-btn, .previewPage--main--container--top .title-notes-container .title-btns-container .cancel-btn {
+  font-size: 1.6rem;
+}
+.previewPage--main--container--top .title-notes-container .title-btns-container .edit-btn:hover, .previewPage--main--container--top .title-notes-container .title-btns-container .delete-btn:hover, .previewPage--main--container--top .title-notes-container .title-btns-container .cancel-btn:hover {
+  background-color: #BACC81;
+}
+.previewPage--main--container--top .title-notes-container .note-container {
+  flex: 1;
+  max-height: 20rem;
+  margin-top: 1rem;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--top .title-notes-container .note-container {
+    display: flex;
+    gap: 1rem;
+  }
+}
+.previewPage--main--container--top .title-notes-container .note-container .notes-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 767.98px) {
+  .previewPage--main--container--top .title-notes-container .note-container .notes-title {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+}
+.previewPage--main--container--top .title-notes-container .note-container p {
+  height: 10rem;
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.6rem;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--top .title-notes-container .note-container p {
+    width: 100%;
+    height: 5rem;
+  }
+}
+.previewPage--main--container--bottom {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  overflow-y: auto;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--bottom {
+    display: block;
+  }
+}
+.previewPage--main--container--bottom .ingredients-container {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+}
+.previewPage--main--container--bottom .ingredients-container .ingredients-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 410px) {
+  .previewPage--main--container--bottom .ingredients-container .ingredients-title {
+    font-size: 1.6rem;
+  }
+}
+.previewPage--main--container--bottom .ingredients-container p {
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  height: 100%;
+  white-space: pre-line;
+  line-height: 4rem;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--bottom .ingredients-container p {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+  }
+}
+.previewPage--main--container--bottom .directions-container {
+  flex: 3;
+  max-width: calc(100% - 20rem - 4rem);
+  overflow-y: auto;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--bottom .directions-container {
+    max-width: 100%;
+  }
+}
+.previewPage--main--container--bottom .directions-container .directions-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 410px) {
+  .previewPage--main--container--bottom .directions-container .directions-title {
+    font-size: 1.6rem;
+  }
+}
+.previewPage--main--container--bottom .directions-container p {
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  white-space: pre-line;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+  word-wrap: break-word;
+}
+@media (max-width: 992px) {
+  .previewPage--main--container--bottom .directions-container p {
+    font-size: 1.6rem;
+  }
+}
+/*# sourceMappingURL=PreviewPage.css.map */

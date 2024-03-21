@@ -1,0 +1,252 @@
+$sm: 410px;
+$md: 767.98px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin mq($bp){
+  @media (max-width: ($bp)) { 
+      @content;
+  }
+}
+
+.previewPage {
+  height: 100vh;
+  background-color: whitesmoke;
+  &--main{
+    background-color: whitesmoke;
+    &--container{
+      height: 100%;
+      padding-top: 1rem;
+
+      &--top{
+        display: flex;
+        gap: 4rem;
+
+        .img-container {
+          width: 20rem;
+          height: 20rem;
+          flex: 1;
+          @include mq($lg){
+            width: 15rem;
+            height: 15rem;
+          }
+          @include mq($md){
+            // width: 10rem;
+            // height: 10rem;
+            display: none;
+          }
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .title-notes-container{
+          flex: 4;
+          display: flex;
+          flex-direction: column;
+          height: 20rem;
+          overflow-y: hidden;
+
+          .title-btns-container{
+            display: flex;
+            justify-content: right;
+            flex: 1;
+            @include mq($md){
+              position: relative;
+            }
+            
+            .title{
+              margin-right: auto;
+              font-family: "Playpen Sans", cursive;
+              font-optical-sizing: auto;
+              font-weight: 600;
+              font-style: normal;
+              @include mq($lg){
+                font-size: 2.4rem;
+              }
+              @include mq($md){
+                font-size: 2rem;
+                margin-left: 10rem;
+                padding-top: 1rem;
+                
+                &::before{
+                  content: url("../../assets/menu-icon.png");
+                  display: inline-block;
+                  vertical-align: middle;
+                  transform: scale(0.4);
+                  position: absolute;
+                  top: -6rem;
+                  left: -6rem;
+                }
+              }
+              @include mq($sm){
+                font-size: 1.6rem;
+              }
+            }
+
+            .btn {
+              margin-left: 2rem;
+              width: 10rem;
+              height: 4rem; 
+              font-size: 1.6rem;
+            }
+            .btn-success{
+              @include mq($md){
+                display: none;
+              }
+              &:hover{
+                background-color: #0D3A20;
+              }
+            }
+
+            .btn-danger{
+              @include mq($md){
+                display: none;
+              }
+              &:hover{
+                background-color: red;
+              }
+            }
+
+            .btn-cancel{
+              background-color: #d4caca;
+              @include mq($md){
+                display: none;
+              }
+              &:hover{
+                background-color: rgb(103, 92, 92);
+                color: #fff;
+              }
+            }
+            
+            #dropdown-basic{
+              background-color: #E9EDCE;
+              color: black;
+              border: none;
+              display: none;
+                .bi-list{
+                  font-size: 2rem;
+                }
+              &:hover{
+                background-color: #BACC81;
+              }
+              @include mq($md){
+                display: block;
+                width: 5rem;
+              }
+              &::after{
+                display: none;
+              }
+            }
+            .edit-btn, .delete-btn, .cancel-btn{
+              font-size: 1.6rem;
+              &:hover{
+                background-color: #BACC81;
+              }
+            }
+          }
+          .note-container{
+            flex: 1;
+            max-height: 20rem;
+            margin-top: 1rem;
+            @include mq($lg){
+              display: flex;
+              gap: 1rem;
+            }
+            .notes-title{
+              font-size: 2rem;
+              font-weight: bold;
+              @include mq($md){
+                margin: 0;
+                font-size: 1.6rem;
+              }
+            }
+
+            p{
+              height: 10rem;
+              font-family: "Playpen Sans", cursive;
+              font-optical-sizing: auto;
+              font-weight: 400;
+              font-style: normal;  
+              font-size: 1.6rem;
+              white-space: pre-line;
+              overflow-wrap: break-word;
+              overflow-y: scroll;
+              @include mq($lg){
+                width: 100%;
+                height: 5rem;
+              }
+            }
+          }
+        }
+      }
+      &--bottom{
+        display: flex;
+        gap: 3rem;
+        margin-top: 2rem;
+        overflow-y: auto;
+        @include mq($lg){
+          display: block;
+        }
+
+        .ingredients-container{
+          flex: 1;
+          height: 100%;
+          overflow-y: auto;
+          
+          .ingredients-title{
+            font-size: 2rem;
+            font-weight: bold;
+            @include mq($sm){
+              font-size: 1.6rem;
+            }
+          }
+          p{
+            font-family: "Playpen Sans", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+            height: 100%;
+            white-space: pre-line;
+            line-height: 4rem;
+            @include mq($lg){
+              font-size: 1.6rem;
+              margin-bottom: 4rem;
+            }
+          }
+        }
+        .directions-container{
+          flex: 3;
+          max-width: calc(100% - 20rem - 4rem);
+          overflow-y: auto;
+          @include mq($lg){
+            max-width: 100%;
+          }
+          .directions-title{
+            font-size: 2rem;
+            font-weight: bold;
+            @include mq($sm){
+              font-size: 1.6rem;
+            }
+          }
+          p{
+            font-family: "Playpen Sans", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+            white-space: pre-line;
+            line-height: 4rem;
+            letter-spacing: 0.2rem;
+            word-wrap: break-word;
+            @include mq($lg){
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
